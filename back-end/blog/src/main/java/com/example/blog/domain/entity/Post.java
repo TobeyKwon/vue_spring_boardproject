@@ -30,4 +30,19 @@ public class Post extends BaseEntity {
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     @OrderBy("id asc")
     private List<Reply> comments = new ArrayList<>();
+
+    /**
+     * 조회수 증가
+     */
+    public void increaseView() {
+        view++;
+    }
+
+    /**
+     * 조회수 감소
+     */
+    public void decreaseView() {
+        view = view != 0 ? view-- : 0;
+    }
+
 }
