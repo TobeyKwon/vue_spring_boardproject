@@ -1,4 +1,4 @@
-package com.example.blog.entity;
+package com.example.blog.domain.entity;
 
 import javax.persistence.*;
 
