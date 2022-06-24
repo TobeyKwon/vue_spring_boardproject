@@ -3,11 +3,15 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: kwon
     password: 1234
-    url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul&useSSL=false?allowPublicKeyRetrieval=true"
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false
   jpa:
-    show-sql: true
     hibernate:
-      ddl-auto: create
-    database: mysql
+      ddl-auto: update
     properties:
-      hibernate.default_batch_fetch_size: 1000
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 1000
+    database: mysql
+  messages:
+    basename: messages,errors
