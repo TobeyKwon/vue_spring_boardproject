@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Post extends BaseEntity {
+public class Board extends BaseEntity {
 
     @Id @GeneratedValue
+    @Column(name = "board_id")
     private Long id;
 
     @Column(nullable = false)

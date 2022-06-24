@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class Reply extends BaseEntity {
 
     @Id @GeneratedValue
+    @Column(name = "reply_id")
     private Long id;
 
     @Lob
@@ -14,7 +15,7 @@ public class Reply extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "post_id")
-    private Post post;
+    private Board post;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
